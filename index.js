@@ -4,12 +4,15 @@
 
 const express = require("express");
 const app = express();
-
 const cors = require("cors");
+
+const connectDB = require("./config/db") //Llamando a la DB
 
 // 2 -- MIDDLEWARES
 
 require("dotenv").config(); //Activando las variables de entorno
+
+connectDB(); //Iniciando la DB
 
 app.use(cors()); // Relación de multiples servidores y REACT
 
@@ -18,13 +21,13 @@ app.use(express.json({ extended: true })); //Peticiones y retornos de informaci�
 // 3 -- RUTAS
 
 // app.use("/api", require("EL HOME"));
-app.use("/api/equip-sale", require("./routes/equip-sale"));
 app.use("/api/equip-rent", require("./routes/equip-rent"));
-app.use("/api/users", require("./routes/users"));
-app.use("/api/auth", require("./routes/auth"))
+// app.use("/api/equip-sale", require("./routes/equip-sale"));
+// app.use("/api/users", require("./routes/users"));
+// app.use("/api/auth", require("./routes/auth"))
 
 // 4 -- SERVIDOR
 
 app.listen(process.env.PORT, () => {
-  console.log(`Listening on PORT: ${PORT} ⚙⚙✅`)
+  console.log(`Listening on PORT: ${process.env.PORT} 🦻⚙✅`)
 })

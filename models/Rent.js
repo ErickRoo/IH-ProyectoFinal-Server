@@ -1,5 +1,5 @@
 // 1 -- Importaciones
-const ongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 // 2 -- SCHEMA
 const rentSchema = mongoose.Schema(
