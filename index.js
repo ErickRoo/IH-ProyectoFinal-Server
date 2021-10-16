@@ -22,7 +22,7 @@ app.use(express.json({ extended: true })); //Peticiones y retornos de informaciÃ
 
 // app.use("/api", require("EL HOME"));
 app.use("/api/equip-rent", require("./routes/equip-rent"));
-// app.use("/api/equip-sale", require("./routes/equip-sale"));
+app.use("/api/equipment", require("./routes/equipments"));
 // app.use("/api/users", require("./routes/users"));
 // app.use("/api/auth", require("./routes/auth"))
 

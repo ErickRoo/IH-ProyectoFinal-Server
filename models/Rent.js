@@ -6,53 +6,53 @@ const rentSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      require: true
+      require: [true, "User NAME for the rent is required."]
     },
     surname: {
       type: String,
-      require: true
+      require: [true, "User SURNAME for the rent is required."]
     },
     email: {
       type: String,
-      require: [true, "email is required"],
+      require: [true, "User EMAIL for the rent is required."],
       trim: true,
       lowercase: true,
     },
     startDate: {
       type: Date,
-      require: true
+      require: [true, "User STAR DATE for the rent is required."]
     },
     endDate: {
       type: Date,
-      require: true
+      require: [true, "User END DATE for the rent is required."]
     },
     quantity: {
       type: Number,
-      require: true,
+      require: [true, "User items QUANTITY for the rent is required."],
       default: 1
     },
     phone: {
       type: Number,
-      require: true
+      require: [true, "User PHONE for the rent is required."]
     },
     company: {
       type: String
     },
     state: {
       type: String,
-      require: true
+      require: [true, "STATE of the user for the rent is required."]
     },
     city: {
       type: String,
-      require: true
+      require: [true, "CITY of the user for the rent is required."]
     },
     zip: {
       type: Number,
-      require: true
+      require: [true, "ZIP CODE of the user for the rent is required."]
     },
     message: {
       type: String
-    }
+    },
   },
   {
     timestamps: true
