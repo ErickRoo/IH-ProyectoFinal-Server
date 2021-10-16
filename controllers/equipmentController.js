@@ -1,7 +1,7 @@
 
 const Equipment = require("../models/Equipment");
 
-// Función para traer todos los equipos (VENTA/RENTA)
+// Función para OBTENER todos los equipos (VENTA/RENTA)
 exports.getAllEquipment = async (req, res) => {
   try {
 
@@ -19,7 +19,7 @@ exports.getAllEquipment = async (req, res) => {
 
     return res.status(500).json({
       data: null,
-      erroMsg: "Error interno. Estamos arreglándolo lo más pronto posible."
+      errMsg: "Error interno. Estamos arreglándolo lo más pronto posible."
     })
 
   }

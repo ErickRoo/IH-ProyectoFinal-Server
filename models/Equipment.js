@@ -38,7 +38,11 @@ const equipmentSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Sale"
   }
-});
+},
+  {
+    timestamps: true
+  }
+);
 
 // 3 -- Modelo
 const Equipment = mongoose.model("Equipment", equipmentSchema);
