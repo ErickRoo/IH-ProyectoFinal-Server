@@ -12,6 +12,8 @@ const userSchema = mongoose.Schema({
     type: String,
     required: [true, "The EMAIL is required to signup."],
     unique: true,
+    lowercase: true,
+    trim: true,
   },
   hashedPassword: {
     type: String,
@@ -24,7 +26,8 @@ const userSchema = mongoose.Schema({
 },
   {
     timestamps: true
-  });
+  }
+);
 
 // 3 -- Model
 const User = mongoose.model("User", userSchema);

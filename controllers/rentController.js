@@ -134,7 +134,7 @@ exports.deleteRent = async (req, res) => {
 
     return res.status(200).json({
       data: deleteRent,
-      verifyMsg: "Se ha ELIMINADO correctamente."
+      verifyMsg: "Se ha ELIMINADO renta correctamente."
     })
 
   } catch (error) {
