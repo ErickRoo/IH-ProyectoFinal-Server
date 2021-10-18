@@ -7,14 +7,14 @@ const mongoose = require("mongoose");
 const equipmentSchema = mongoose.Schema({
   name: {
     type: String,
-    required: [true, "Name equipment is required."]
+    required: [true, "Equipment name is required."]
   },
   model: {
     type: String,
-    required: [true, "Model equipment is required."]
+    required: [true, "Equipment model is required."]
   },
   serialNum: {
-    type: Number,
+    type: String,
   },
   calibrated: {
     type: Boolean,
@@ -28,7 +28,11 @@ const equipmentSchema = mongoose.Schema({
   category: {
     type: String,
     enum: ["sale", "rent"],
-    required: [true, "Category equipment is required."]
+    required: [true, "Equipment category is required."]
+  },
+  price: {
+    type: Number,
+    required: [true, "Equipment price is required."]
   },
   rentBy: {
     type: mongoose.Schema.Types.ObjectId,
