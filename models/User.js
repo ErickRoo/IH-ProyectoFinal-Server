@@ -19,6 +19,11 @@ const userSchema = mongoose.Schema({
     type: String,
     required: [true, "The PASSWORD is required to signup."]
   },
+  rol: {
+    type: Number,
+    enum: [0, 1],
+    default: 1,
+  },
   listRent: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Rent"
