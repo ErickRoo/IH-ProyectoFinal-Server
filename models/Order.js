@@ -20,17 +20,15 @@ const rentSchema = mongoose.Schema(
     },
     startDate: {
       type: Date,
-      require: [true, "User STAR DATE for the rent is required."]
     },
     endDate: {
       type: Date,
-      require: [true, "User END DATE for the rent is required."]
     },
-    quantity: {
-      type: Number,
-      require: [true, "User items QUANTITY for the rent is required."],
-      default: 1
-    },
+    // quantity: {
+    //   type: Number,
+    //   require: [true, "User items QUANTITY for the rent is required."],
+    //   default: 1
+    // },
     phone: {
       type: Number,
       require: [true, "User PHONE for the rent is required."]
@@ -60,7 +58,7 @@ const rentSchema = mongoose.Schema(
 );
 
 // 3 -- Modelo
-const Rent = mongoose.model("Rent", rentSchema);
+const Order = mongoose.model("Order", rentSchema);
 
 // 4 -- Exportación
-module.exports = Rent;
+module.exports = Order;

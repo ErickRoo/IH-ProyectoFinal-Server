@@ -1,18 +1,18 @@
 //Equipos en renta
-const Rent = require("../models/Rent");
+const Order = require("../models/Order");
 
 //Función para OBTENER los equipos en renta
-exports.getAllEquipment = async (req, res) => {
+exports.getAllOrders = async (req, res) => {
   try {
 
-    const equipRent = await Rent.find({});
+    const equipOrder = await Order.find({});
 
     return res.status(200).json({
-      data: equipRent,
+      data: equipOrder,
     })
 
   } catch (error) {
-    console.log(`Hubo un error al traer los equipos en renta:
+    console.log(`Hubo un error al traer las ordenes de COMPRA/RENTA:
     ${error}
     `);
     return res.status(500).json({
@@ -24,7 +24,7 @@ exports.getAllEquipment = async (req, res) => {
 }
 
 //Función para CREAR renta de equipos disponibles
-exports.createRentEquipment = async (req, res) => {
+exports.createOrderEquipment = async (req, res) => {
 
   const {
     name,
@@ -43,7 +43,7 @@ exports.createRentEquipment = async (req, res) => {
 
   try {
 
-    const newRent = await Rent.create({
+    const newOrder = await Order.create({
       name,
       surname,
       email,
@@ -59,23 +59,23 @@ exports.createRentEquipment = async (req, res) => {
     });
 
     res.status(201).json({
-      data: newRent,
-      verifyMsg: "Renta creada correctamente."
+      data: newOrder,
+      verifyMsg: "Orden creada correctamente."
     })
   } catch (error) {
-    console.log(`Hubo un error al crear un equipo para renta: 
+    console.log(`Hubo un error al crear la orden de COMPRA/RENTA: 
     ${error}`);
 
     return res.status(500).json({
       data: null,
-      errMsg: "Error al crear equipo para renta. Verificar SERVER."
+      errMsg: "Error al crear orden de COMPRA/RENTA. Verificar SERVER."
     })
 
   }
 }
 
 //Función para EDITAR renta
-exports.editRent = async (req, res) => {
+exports.editOrder = async (req, res) => {
 
   const {
     id,
@@ -95,7 +95,7 @@ exports.editRent = async (req, res) => {
 
   try {
 
-    const updatedRent = await Rent.findByIdAndUpdate(id, {
+    const updatedOrder = await Order.findByIdAndUpdate(id, {
       name,
       surname,
       email,
@@ -112,36 +112,36 @@ exports.editRent = async (req, res) => {
       { new: true });
 
     return res.json({
-      data: updatedRent,
+      data: updatedOrder,
       verifyMsg: "Se ha EDITADO correctamente."
     })
 
   } catch (error) {
-    console.log(`Hubo un error al EDITAR renta: ${error}`);
+    console.log(`Hubo un error al EDITAR la orden de COMPRA/RENTA: ${error}`);
     res.status(500).json({
       data: null,
-      errMsg: "Error al editar renta. Verificar SERVER."
+      errMsg: "Error al la orden de COMPRA/RENTA. Verificar SERVER."
     })
   }
 }
 
 //Función DELETE para eliminar renta
-exports.deleteRent = async (req, res) => {
+exports.deleteOrder = async (req, res) => {
   const { id } = req.body;
 
   try {
-    const deleteRent = await Rent.findByIdAndRemove(id);
+    const deleteOrder = await Order.findByIdAndRemove(id);
 
     return res.status(200).json({
-      data: deleteRent,
-      verifyMsg: "Se ha ELIMINADO renta correctamente."
+      data: deleteOrder,
+      verifyMsg: "Se ha ELIMINADO la orden de COMPRA/RENTA correctamente."
     })
 
   } catch (error) {
-    console.log(`Hubo un error al ELIMINAR renta: ${error}`);
+    console.log(`Hubo un error al ELIMINAR la orden de COMPRA/RENTA: ${error}`);
     res.status(500).json({
       data: null,
-      errMsg: "Error al eliminar renta. Verificar SERVER."
+      errMsg: "Error al eliminar la orden de COMPRA/RENTA. Verificar SERVER."
     })
   }
 }

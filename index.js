@@ -21,7 +21,7 @@ app.use(express.json({ extended: true })); //Peticiones y retornos de informaciÃ
 // 3 -- RUTAS
 
 // app.use("/api", require("EL HOME"));
-app.use("/api/equip-rent", require("./routes/equip-rent"));
+app.use("/api/purchase-rent-order", require("./routes/order"));
 app.use("/api/equipment", require("./routes/equipments"));
 app.use("/api/users", require("./routes/users"));
 app.use("/api/auth", require("./routes/auth"));

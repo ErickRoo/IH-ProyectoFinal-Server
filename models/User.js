@@ -24,9 +24,9 @@ const userSchema = mongoose.Schema({
     enum: [0, 1],
     default: 1,
   },
-  listRent: {
+  listOrders: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Rent"
+    ref: "Order"
   }
 },
   {
