@@ -20,7 +20,10 @@ app.use(express.json({ extended: true })); //Peticiones y retornos de informaci√
 
 // 3 -- RUTAS
 
+<<<<<<< HEAD
 // app.use("/api", require("EL HOME"));
+=======
+>>>>>>> 5e165f7 (add model for rents and sales (together), change the name of the routes)
 app.use("/api/purchase-rent-order", require("./routes/order"));
 app.use("/api/equipment", require("./routes/equipments"));
 app.use("/api/users", require("./routes/users"));
