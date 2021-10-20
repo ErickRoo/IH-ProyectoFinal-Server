@@ -1,5 +1,6 @@
 //Equipos en renta
 const Order = require("../models/Order");
+const { validationResult } = require("express-validator");
 
 //Función para OBTENER los equipos en renta
 exports.getAllOrders = async (req, res) => {
@@ -24,7 +25,15 @@ exports.getAllOrders = async (req, res) => {
 }
 
 //Función para CREAR renta de equipos disponibles
-exports.createOrderEquipment = async (req, res) => {
+exports.createPurchaseEquipment = async (req, res) => {
+
+  //Validaciones en routes
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({
+      errMsg: errors.array()
+    })
+  }
 
   const {
     name,
