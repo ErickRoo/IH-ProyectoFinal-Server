@@ -34,6 +34,9 @@ const equipmentSchema = mongoose.Schema({
     type: Number,
     required: [true, "Equipment price is required."]
   },
+  imageUrl: {
+    type: String,
+  },
   rentBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Rent"

@@ -37,6 +37,7 @@ exports.createEquipment = async (req, res) => {
     description,
     category,
     price,
+    imageUrl,
   } = req.body;
 
   try {
@@ -50,6 +51,7 @@ exports.createEquipment = async (req, res) => {
       description,
       category,
       price,
+      imageUrl,
     });
 
     res.status(201).json({
@@ -81,7 +83,8 @@ exports.editEquipment = async (req, res) => {
     lastCalibrated,
     description,
     category,
-    price
+    price,
+    imageUrl,
   } = req.body;
 
   try {
@@ -95,6 +98,7 @@ exports.editEquipment = async (req, res) => {
       description,
       category,
       price,
+      imageUrl
     },
       { new: true });
 
